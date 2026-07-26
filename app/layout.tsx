@@ -1,3 +1,4 @@
+import {ClerkProvider} from "@clerk/nextjs";
 import type { Metadata, Viewport } from "next";
 import { Space_Grotesk, Inter, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
@@ -37,7 +38,9 @@ export default function RootLayout({
       <body
         className={`${fontSpace.variable} ${fontInter.variable} ${fontJetbrains.variable} antialiased`}
       >
-        {children}
+        <ClerkProvider>
+          {children}
+        </ClerkProvider>
       </body>
     </html>
   );

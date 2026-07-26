@@ -101,6 +101,8 @@ function timeAgo(dateStr: string): string {
   return date.toLocaleDateString("en-US", { month: "short", day: "numeric" });
 }
 
+import { UserButton } from "@clerk/nextjs";
+
 export default function AdminPage() {
   const [leads, setLeads] = useState<Lead[]>([]);
   const [search, setSearch] = useState("");
@@ -192,13 +194,16 @@ export default function AdminPage() {
               </p>
             </div>
           </div>
-          <button
-            onClick={fetchLeads}
-            className="flex items-center gap-2 px-4 h-10 rounded bg-carbon-ink text-paper-cream text-sm font-medium transition-transform hover:-translate-y-0.5 hover:shadow-[4px_4px_0_0_#0F1713] active:translate-y-0 active:shadow-none"
-          >
-            <RefreshCw className={`w-4 h-4 ${isLoading ? "animate-spin" : ""}`} />
-            Refresh
-          </button>
+          <div className="flex items-center gap-4">
+            <button
+              onClick={fetchLeads}
+              className="flex items-center gap-2 px-4 h-10 rounded bg-carbon-ink text-paper-cream text-sm font-medium transition-transform hover:-translate-y-0.5 hover:shadow-[4px_4px_0_0_#0F1713] active:translate-y-0 active:shadow-none"
+            >
+              <RefreshCw className={`w-4 h-4 ${isLoading ? "animate-spin" : ""}`} />
+              Refresh
+            </button>
+            <UserButton />
+          </div>
         </div>
 
         {/* Stats Cards */}

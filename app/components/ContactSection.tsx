@@ -10,7 +10,7 @@ import { CaseSensitive, FingerprintPattern, Cpu, MonitorCog, Frame } from "lucid
 export default function ContactSection() {
 
     return (
-        <section className="flex justify-center w-full mt-30 mb-8 text-white">
+        <section id="contact" className="flex justify-center w-full mt-30 mb-8 text-white">
             <div className="flex flex-col md:flex-row justify-between items-center md:items-stretch gap-8 w-full max-w-7xl">
                 <div className="flex flex-col justify-between gap-4 items-start w-full md:w-2/3 p-4">
                     <div className="flex flex-col justify-center items-start w-full gap-4">
