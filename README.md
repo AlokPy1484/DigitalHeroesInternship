@@ -76,6 +76,50 @@ Navigate to [http://localhost:3000/admin](http://localhost:3000/admin) to access
 
 ---
 
+
+### 5️⃣ Contact Form's Architecture
+
+```mermaid
+sequenceDiagram
+    autonumber
+    
+    actor User
+    participant ContactCard as Client (ContactCard.tsx)
+    participant NextAPI as Next.js API (/api/leads)
+    participant Supabase as Supabase Database (leads table)
+
+    User->>ContactCard: 1. Clicks "Start Now"
+    User->>ContactCard: 2. Selects Service, Timeline, Budget
+    User->>ContactCard: 3. Enters Name, Email, Notes
+    User->>ContactCard: 4. Clicks "Get Estimate"
+    
+    Note over ContactCard: Sets isSubmitting = true
+    
+    ContactCard->>NextAPI: POST /api/leads (JSON Payload)
+    
+    Note over NextAPI: Validates Required Fields & Email
+    
+    alt Validation Fails
+        NextAPI-->>ContactCard: 400 Bad Request (Error Msg)
+        ContactCard-->>User: Displays Error Message
+    else Validation Passes
+        NextAPI->>Supabase: .from('leads').insert(payload)
+        
+        alt Database Insert Error
+            Supabase-->>NextAPI: Error Payload
+            NextAPI-->>ContactCard: 500 Internal Server Error
+            ContactCard-->>User: Displays "Failed to send"
+        else Database Insert Success
+            Supabase-->>NextAPI: Returns Inserted Row Data
+            NextAPI-->>ContactCard: 201 Created (Success Payload)
+            
+            Note over ContactCard: Sets isSuccess = true
+            ContactCard-->>User: Renders Success Screen & Toast
+        end
+    end
+```
+
+
 ## 🤝 Contributing
 Contributions, issues, and feature requests are welcome! 
 Feel free to check the issues page if you want to contribute.
