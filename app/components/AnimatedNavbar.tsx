@@ -76,8 +76,8 @@ type navItemsTyoe = {
 
 const navItems: navItemsTyoe[] = [
     {
-        lable: "Home",
-        link: "#"
+        lable: "Admin",
+        link: "/admin"
     },
     {
         lable: "Services",
