@@ -11,7 +11,7 @@ export default function HeroSection() {
     <section className="flex flex-col items-center text-center relative bg-none px-6 py-30 md:py-50 text-white overflow-hidden ">
 
       <div className="absolute inset-0 ">
-        {/* <LiquidEther colors={["#87B59B", "#CBFCDE", "#CBFCDE"]} /> */}
+        <LiquidEther colors={["#87B59B", "#CBFCDE", "#CBFCDE"]} />
       </div>
 
       {/* Content INSIDE orb */}
