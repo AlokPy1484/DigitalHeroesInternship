@@ -1,36 +1,84 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🚀 Digital Heroes – Next.js Web Development Landing Page
 
-## Getting Started
+The **Digital Heroes Landing Page** (PlexLanding 2.0) is a modern, high-performance portfolio and lead generation platform for web development services.  
+Built with **Next.js 16 (App Router)** and **Tailwind CSS 4**, it features immersive animations, an interactive multi-step contact wizard, and a secure admin dashboard to seamlessly manage incoming client requests.
 
-First, run the development server:
+---
 
+## 🌟 Overview
+
+This project is designed to provide a stunning first impression to potential clients while maintaining a robust and practical backend architecture for the site owner. It leverages modern React paradigms, Framer Motion for fluid transitions, and Clerk for secure administrative access.
+
+Whether a user is browsing your services or requesting a project estimate through the interactive lead generation form, the experience is optimized for speed, aesthetics, and conversion.
+
+---
+
+## ✨ Features
+
+- ⚡ **Next.js App Router**: Server-side rendering and static generation for peak performance.
+- 🎨 **Immersive UI/UX**: Built with Tailwind CSS, Framer Motion, and Lottie animations for a premium feel.
+- 🗺️ **Interactive Elements**: Includes interactive dotted maps (`svg-dotted-map`) and 3D globe visualizations (`cobe`).
+- 📝 **Multi-Step Contact Wizard**: A sleek, user-friendly form to capture leads, project types, timelines, and budgets.
+- 🔐 **Secure Admin Dashboard**: Protected `/admin` route utilizing **Clerk Authentication** to view and manage incoming leads.
+- 💾 **API Integration**: RESTful API endpoints for lead submission and status tracking.
+- 📱 **Fully Responsive**: Flawless design execution across all device sizes.
+
+---
+
+## 🛠️ Tech Stack
+
+### **Frontend**
+- **React 19** & **Next.js 16** (App Router & Turbopack)
+- **Tailwind CSS v4** for utility-first styling
+- **Framer Motion** for declarative animations
+- **Lucide React** & **React Icons** for scalable iconography
+- **Lottie React** for vector animations
+- **Three.js** & **Cobe** for 3D graphics
+
+### **Backend & Authentication**
+- **Clerk** for robust, pre-built authentication (`@clerk/nextjs`)
+- **Next.js API Routes** for backend logic
+- **Supabase** integration for robust database storage (Leads management)
+
+---
+
+## 📦 Installation & Setup
+
+### 1️⃣ Clone the Repository
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone https://github.com/AlokPy1484/landingpage.git
+cd landingPage
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### 2️⃣ Install Dependencies
+```bash
+npm install
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### 3️⃣ Environment Variables
+Create a `.env.local` file in the root directory and add your keys:
+```env
+# Clerk Authentication Keys
+NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=your_publishable_key
+CLERK_SECRET_KEY=your_secret_key
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+# Supabase Keys (for Lead Database)
+NEXT_PUBLIC_SUPABASE_URL=your_supabase_url
+NEXT_PUBLIC_SUPABASE_ANON_KEY=your_supabase_anon_key
+```
 
-## Learn More
+### 4️⃣ Run the Development Server
+```bash
+npm run dev
+```
+Open [http://localhost:3000](http://localhost:3000) in your browser to view the application.  
+Navigate to [http://localhost:3000/admin](http://localhost:3000/admin) to access the Clerk-protected dashboard.
 
-To learn more about Next.js, take a look at the following resources:
+---
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 🤝 Contributing
+Contributions, issues, and feature requests are welcome! 
+Feel free to check the issues page if you want to contribute.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 📄 License
+This project is open-source and available under the MIT License.
